@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MultiLingual Translator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <span class="logo"><i class="fa-solid fa-language"></i> MultiLingual</span>
+      <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="title">Translate Text</h1>
+
+    <div class="language-bar">
+      <div class="lang-select-wrapper">
+        <select id="sourceLang" aria-label="Source language">
+          <option value="auto">Detect Language</option>
+          <option value="en" selected>English</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="de">German</option>
+          <option value="it">Italian</option>
+          <option value="pt">Portuguese</option>
+          <option value="zh">Chinese</option>
+          <option value="ja">Japanese</option>
+          <option value="ar">Arabic</option>
+          <option value="ru">Russian</option>
+        </select>
+      </div>
+
+      <button class="switch-btn" id="switchBtn" title="Switch languages" aria-label="Switch languages">
+        <i class="fa-solid fa-arrows-left-right"></i>
+      </button>
+
+      <div class="lang-select-wrapper">
+        <select id="targetLang" aria-label="Target language">
+          <option value="en">English</option>
+          <option value="fr" selected>French</option>
+          <option value="es">Spanish</option>
+          <option value="de">German</option>
+          <option value="it">Italian</option>
+          <option value="pt">Portuguese</option>
+          <option value="zh">Chinese</option>
+          <option value="ja">Japanese</option>
+          <option value="ar">Arabic</option>
+          <option value="ru">Russian</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="translation-panels">
+      <!-- Source panel -->
+      <div class="panel panel-source">
+        <textarea
+          id="sourceText"
+          class="text-area"
+          placeholder="Enter text to translate…"
+          maxlength="500"
+          aria-label="Text to translate"
+        >Hello, how are you</textarea>
+        <div class="panel-footer">
+          <span class="char-count"><span id="charCount">19</span>/500</span>
+          <div class="panel-actions">
+            <button class="action-btn" id="listenSource" title="Listen to source text" aria-label="Listen to source text">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+            <button class="action-btn" id="copySource" title="Copy source text" aria-label="Copy source text">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Target panel -->
+      <div class="panel panel-target">
+        <div id="translatedText" class="text-area translated-output" aria-live="polite" aria-label="Translated text">
+          <span class="placeholder-text">Translation will appear here…</span>
+        </div>
+        <div id="loadingIndicator" class="loading-indicator" aria-live="assertive" hidden>
+          <i class="fa-solid fa-spinner fa-spin"></i> Translating…
+        </div>
+        <div id="errorMessage" class="error-message" role="alert" hidden></div>
+        <div class="panel-footer">
+          <span class="detected-lang" id="detectedLang"></span>
+          <div class="panel-actions">
+            <button class="action-btn" id="listenTranslated" title="Listen to translated text" aria-label="Listen to translated text">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+            <button class="action-btn" id="copyTranslated" title="Copy translated text" aria-label="Copy translated text">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="translate-btn-row">
+      <button class="translate-btn" id="translateBtn">
+        <i class="fa-solid fa-bolt"></i> Translate
+      </button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
