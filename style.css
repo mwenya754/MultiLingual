@@ -111,11 +111,20 @@ body {
   padding: 0 20px 40px;
 }
 
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
 .title {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 24px;
   color: var(--text);
+  text-align: center;
 }
 
 /* =========================================
@@ -379,6 +388,10 @@ textarea.text-area::placeholder {
   .container {
     margin: 20px auto;
     padding: 0 12px 24px;
+  }
+
+  .card {
+    padding: 20px 16px;
   }
 
   .title {
